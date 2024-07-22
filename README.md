@@ -6,6 +6,6 @@ The positive case is getting all data and validate it with the JSONSchema and cr
 
 The negative cases are getting data with invalid endpoint and parameter.
 
-All of the test is successful.
+All tests were successful as seen in the image below.
 
-![Uploading Screenshot 2024-07-22 at 22.31.01.png…]()
+<img width="1196" alt="Screenshot 2024-07-22 at 22 31 01" src="https://github.com/user-attachments/assets/e48f14c8-ea0f-4287-b8b6-bd25c55bb386">
