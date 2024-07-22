@@ -29,6 +29,11 @@ public class ApiStep {
         apiPage.hitApiGetListUsers();
     }
 
+    @When("hit api create new user")
+    public void hitApiCreateNewUser() {
+        apiPage.hitApiCreateNewUsers();
+    }
+
     @Then("validation status code is equals to {int}")
     public void validationStatusCodeIsEqualsTo(int status_code) {
         apiPage.validationStatusCodeIsEqualsTo(status_code);
@@ -62,6 +67,11 @@ public class ApiStep {
     @Then("validation response body contains error message {string}")
     public void validationResponseBodyContainsErrorMessage(String errorMessage) {
         apiPage.validationResponseBodyContainsErrorMessage(errorMessage);
+    }
+
+    @And("validation response body contains user data")
+    public void validationResponseBodyContainsUserData() {
+        apiPage.validationResponseBodyContainsUserData();
     }
 
 }

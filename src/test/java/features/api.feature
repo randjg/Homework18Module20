@@ -18,6 +18,13 @@ Feature: Automation Test REST API
     Then validation response json with JSONSchema "get_list_users_normal.json"
 
   @api
+  Scenario: Test create new user (positive)
+    Given prepare url for "CREATE_NEW_USERS"
+    When hit api create new user
+    Then validation status code is equals to 201
+    And validation response body contains user data
+
+  @api
   Scenario: Test get list data with invalid endpoint (negative)
     Given prepare url for "INVALID_ENDPOINT"
     When hit api get list users with invalid endpoint

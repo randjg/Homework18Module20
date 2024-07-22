@@ -9,7 +9,7 @@ import io.restassured.response.Response;
 import java.io.File;
 import java.util.List;
 
-import static helper.Models.getListUsers;
+import static helper.Models.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApiPage {
@@ -43,6 +43,18 @@ public class ApiPage {
     public void hitApiGetListUsers() {
         response = getListUsers(setURL);
         System.out.println(response.getBody().asString());
+    }
+
+    public void hitApiCreateNewUsers(){
+        response = createNewUser(setURL);
+        System.out.printf(response.getBody().asString());
+    }
+
+    public void validationResponseBodyContainsUserData() {
+        assertThat(response.jsonPath().getString("name")).isEqualTo("Jayjay");
+        assertThat(response.jsonPath().getString("email")).isEqualTo("jayjay@gmail.com");
+        assertThat(response.jsonPath().getString("gender")).isEqualTo("male");
+        assertThat(response.jsonPath().getString("status")).isEqualTo("active");
     }
 
     public void hitApiGetListUsersWithInvalidEndpoint() {
